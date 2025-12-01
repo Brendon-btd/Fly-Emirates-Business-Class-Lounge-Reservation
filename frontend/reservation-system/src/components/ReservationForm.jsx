@@ -32,7 +32,8 @@ function ReservationForm() {
 
             setFormData({name:"", email:"", phone:"", destination:"", airline:"", airport:"", date:"", time:"", guests:"1",})
         } catch (error) {
-            console.log("Error making reservation")
+             console.error("Error making reservation:", error?.response?.data || error.message);
+        toast.error("Could not complete reservation. Please try again.");
             
         }
     }
