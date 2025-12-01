@@ -102,7 +102,7 @@ function ReservationForm() {
         </div>
 
         {/* This is Reservation Form Section */}
-        <div className='bg--gray-50 py-16 px-4 rounded-3xl'>
+        <div className='bg-gray-50 py-16 px-4 rounded-3xl'>
           <h2 className='text-4xl font-bold text-center text-gray-800 mb-4'>Reserve Your Experience</h2>
           <p className='text-center text-gray-600 mb-12 max-w-2xl mx-auto'>Book your spot in our exclusive business lounge and enjoy world-class amenities before your flight</p>
           
