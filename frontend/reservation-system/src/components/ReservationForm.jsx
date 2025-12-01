@@ -60,7 +60,7 @@ function ReservationForm() {
       {/* Hero Section */}
       <div className='relative h-96 bg-red-600'>
         <div className='absolute inset-0 flex flex-col items-center justify-center text-white z-10'>
-          <h1 className='text-6xl font-bold mb-4 tracking-wide'>Emirates</h1>
+          <h1 className='text-6xl font-bold mb-4 tracking-wide'> Fly Emirates</h1>
           <p className='text-2xl font-light mb-2'>Business Class Lounge</p>
           <p className='text-lg opacity-90'>Experience luxury before you fly</p>
         </div>
