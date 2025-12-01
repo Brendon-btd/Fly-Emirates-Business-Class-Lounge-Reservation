@@ -23,6 +23,7 @@ function ReservationForm() {
         setFormData({...formData, [e.target.name]: e.target.value})
     }
 
+    // To let user know when submitted
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -167,7 +168,6 @@ function ReservationForm() {
               <button onClick={handleSubmit} className='w-full mt-8 bg-red-600 text-white py-4 px-6 rounded-lg hover:bg-red-700 font-semibold text-lg shadow-lg transition-all duration-200 hover:shadow-xl transform hover:-translate-y-0.5'>
                 Reserve Your Lounge Access
               </button>
-              <p className='text-center text-xs text-gray-500 mt-6'>By booking, you agree to Emirates terms and conditions</p>
             </div>
           </div>
         </div>

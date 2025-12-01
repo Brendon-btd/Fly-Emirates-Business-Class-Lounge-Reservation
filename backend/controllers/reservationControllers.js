@@ -1,6 +1,6 @@
 import Reservation from '../models/reservation.js'
 
-
+// Creating the reservation
 const createReservation = async (req,res) => {
     try{
         const{name, email, phone, destination, airline, airport, date, time, guests} = req.body
@@ -20,6 +20,7 @@ const createReservation = async (req,res) => {
 
 }
 
+// Gets the reservation
 const getAllReservation = async (req,res)=> {
     try {
         const reservations = await Reservation.find()
@@ -31,6 +32,7 @@ const getAllReservation = async (req,res)=> {
 
 }
 
+// deletes the reservation
 const deleteReservation = async (req,res)=> {
      try {
         const { id } = req.params;
