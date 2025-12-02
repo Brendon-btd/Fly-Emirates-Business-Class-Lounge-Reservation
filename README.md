@@ -26,7 +26,7 @@ Git
 
 # 🛠️Installation
 ## 1.Clone-the-repository
-bashgit clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+bashgit clone https://github.com/Brendon-btd/Fly-Emirates-Business-Class-Lounge-Reservation.git
 ## 2.Backend-Setup
 bashcd backend
 npm install
