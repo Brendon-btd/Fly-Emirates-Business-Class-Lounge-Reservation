@@ -2,8 +2,7 @@ import { CalendarClock, Calendar, Mail, MapPin, Phone, Plane, Radio, User, Users
 import React, { useState } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-
-const backendUrl = 'http://localhost:4000'
+import { backendUrl } from '../App'
 
 function ReservationForm() {
 
@@ -23,7 +22,6 @@ function ReservationForm() {
         setFormData({...formData, [e.target.name]: e.target.value})
     }
 
-    // To let user know when submitted
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -39,8 +37,6 @@ function ReservationForm() {
         }
     }
 
-
-    // The time to pick when booking logic
     const generateTimeSlot = () => {
         const slots = [];
         for (let hour = 9; hour < 21; hour++){
@@ -57,7 +53,6 @@ function ReservationForm() {
 
   return (
     <div className='min-h-screen bg-white'>
-      {/* Hero Section */}
       <div className='relative h-96 bg-red-600'>
         <div className='absolute inset-0 flex flex-col items-center justify-center text-white z-10'>
           <h1 className='text-6xl font-bold mb-4 tracking-wide'> Fly Emirates</h1>
@@ -67,7 +62,6 @@ function ReservationForm() {
         
       </div>
 
-      {/* What the Business lounge Offers Section nb:it does not work its just for design*/}
       <div className='max-w-7xl mx-auto px-4 py-16'>
         <h2 className='text-4xl font-bold text-center text-gray-800 mb-12'>Lounge Amenities</h2>
         <div className='grid grid-cols-1 md:grid-cols-4 gap-8 mb-16'>
@@ -101,7 +95,6 @@ function ReservationForm() {
           </div>
         </div>
 
-        {/* This is Reservation Form Section */}
         <div className='bg-gray-50 py-16 px-4 rounded-3xl'>
           <h2 className='text-4xl font-bold text-center text-gray-800 mb-4'>Reserve Your Experience</h2>
           <p className='text-center text-gray-600 mb-12 max-w-2xl mx-auto'>Book your spot in our exclusive business lounge and enjoy world-class amenities before your flight</p>
@@ -109,42 +102,34 @@ function ReservationForm() {
           <div className='flex justify-center items-center'>
             <div className='bg-white p-8 rounded-2xl shadow-2xl w-full max-w-2xl border-t-4 border-red-600'>
               <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                {/* The Name */}
                 <div className='relative'>
                   <User className='w-5 h-5 absolute left-3 top-3.5 text-red-600'/>
                   <input name='name' value={formData.name} onChange={handleChanges} type="text" placeholder='Full Name' className='w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors' required />
                 </div>
-                {/* The email */}
                 <div className='relative'>
                   <Mail className='w-5 h-5 absolute left-3 top-3.5 text-red-600'/>
                   <input name='email' value={formData.email} onChange={handleChanges} type="email" placeholder='Email Address' className='w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors' required />
                 </div>
-                {/* the number */}
                 <div className='relative'>
                   <Phone className='w-5 h-5 absolute left-3 top-3.5 text-red-600'/>
                   <input name='phone' value={formData.phone} onChange={handleChanges} type="tel" placeholder='Phone Number' className='w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors' required/>
                 </div>
-                {/* the destination */}
                 <div className='relative'>
                   <MapPin className='w-5 h-5 absolute left-3 top-3.5 text-red-600'/>
                   <input name='destination' value={formData.destination} onChange={handleChanges} type="text" placeholder='Destination' className='w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors' required />
                 </div>
-                {/* the airline */}
                 <div className='relative'>
                   <Plane className='w-5 h-5 absolute left-3 top-3.5 text-red-600'/>
                   <input name='airline' value={formData.airline} onChange={handleChanges} type="text" placeholder='Airline' className='w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors' required/>
                 </div>
-                {/* the airport */}
                 <div className='relative'>
                   <Radio className='w-5 h-5 absolute left-3 top-3.5 text-red-600'/>
                   <input name='airport' value={formData.airport} onChange={handleChanges} type="text" placeholder='Airport' className='w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors' required />
                 </div>
-                {/* the calender */}
                 <div className='relative'>
                   <Calendar className='w-5 h-5 absolute left-3 top-3.5 text-red-600'/>
                   <input name='date' value={formData.date} onChange={handleChanges} type="date" className='w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors' required />
                 </div>
-                {/* the time */}
                 <div className='relative'>
                   <CalendarClock className='w-5 h-5 absolute left-3 top-3.5 text-red-600'/>
                   <select name='time' value={formData.time} onChange={handleChanges} className='w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors appearance-none bg-white' required>
@@ -164,7 +149,6 @@ function ReservationForm() {
                 </div>
               </div>
 
-              {/* The submit button */}
               <button onClick={handleSubmit} className='w-full mt-8 bg-red-600 text-white py-4 px-6 rounded-lg hover:bg-red-700 font-semibold text-lg shadow-lg transition-all duration-200 hover:shadow-xl transform hover:-translate-y-0.5'>
                 Reserve Your Lounge Access
               </button>

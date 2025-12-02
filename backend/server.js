@@ -5,11 +5,16 @@ import connectDB from "./config/mongodb.js";
 import reservationRoute from "./routes/reservationRoute.js";
 
 const app = express();
-const port = process.env.Port || 4000;
+const port = process.env.PORT || 4000;
 
 connectDB();
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'DELETE', 'PUT'],
+  credentials: true
+}));
+
 app.use(express.json());
 
 app.use('/api/reservations', reservationRoute)
