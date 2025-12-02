@@ -30,7 +30,7 @@ bashgit clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 ## 2.Backend-Setup
 bashcd backend
 npm install
-##Create a .env file in the backend directory:
+## Create-a-.env-file-in-the-backend-directory:
 MONGODB_URI = "mongodb+srv://brendontafadzwa19_db_user:Royalbiz20@cluster0.xa8swmx.mongodb.net"
 PORT=4000
 Start the backend server:
