@@ -9,15 +9,7 @@ const port = process.env.PORT || 4000;
 
 connectDB();
 
-app.use(cors({
-  origin: ['https://fly-emirates-business-class-lounge-lilac.vercel.app', 'http://localhost:5173'],
-  methods: ['GET', 'POST', 'DELETE', 'PUT', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
-}));
-
-app.options('*', cors());
-
+app.use(cors());
 app.use(express.json());
 
 app.use('/api/reservations', reservationRoute)
